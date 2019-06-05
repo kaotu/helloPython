@@ -64,3 +64,37 @@
     from ... import : ในการใช้งานคำสั่ง import นั้นจะเป็นการนำเข้าออบเจ็คทั้งหมดในโมดูลเข้ามายังโปรแกรม 
     และการใช้งานฟังก์ชันหรือออบเจ็คภายในโมดูลจะต้องนำหน้าด้วยชื่อโมดูลเสมอ ในภาษา Python 
     นั้นมีคำสั่ง from import สำหรับนำเข้าข้อมูลบางส่วนภายในโมดูล และสามารถใช้งานออบเจ็คได้โดยตรงโดยไม่ต้องมี Prefix ชื่อของโมดูล
+
+
+Packages : แนวคิดของ Package เหมือนกับระบบจัดการไฟล์ในระบบปฏิบัติการซึ่งจะประกอบไปด้วยด้วยไฟล์และโฟล์เดอร์
+
+###################################### Structure ###############################################
+        image/                          Top-level package
+            __init__.py               Initialize the image package
+            formats/                  Subpackage for file format
+                    __init__.py
+                    jpeg.py
+                    gif.py
+                    png.py
+                    ...
+            filters/                  Subpackage for image filters
+                    __init__.py
+                    blur.py
+                    noise.py
+                    render.py
+                    ...
+            edit/                  Subpackage for editing images
+                    __init__.py
+                    crop.py
+                    grayscale.py
+                    invert.py
+                    resize.py
+                    ...
+
+ในโฟล์เดอร์ของใน Package มีจะมีไฟล์พิเศษที่ชื่อว่า __init__.py 
+ซึ่งเป็นตัวกำหนดโมดูลภายใน Package สำหรับเพื่อให้ Python ใช้ในการค้นหา Package 
+ภายในโฟล์เดอร์ดังกล่าวเมื่อมีการ Import ในรูปแบบ import * และไฟล์นี้สามารถที่จะไม่มีก็ได้
+################################################################################################
+
+
+
